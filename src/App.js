@@ -1,11 +1,12 @@
 import './App.css';
 
-import logo from './logo.svg';
+import Home from "./pages/home";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <Home />
+      
     </div>
   );
 }
