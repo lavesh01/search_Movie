@@ -1,20 +1,20 @@
-import './App.css';
+import './index.css';
 
-import Home from "./pages/home";
+import React , {useState} from 'react'
+
+import Header from "./components/Header"
+import MovieList from "./components/MovieList"
+import SearchBar from "./components/SearchBar"
 
 const App = () => {
+    const [movies, setMovies] = useState([]);
   return (
     <div className="App">
-      <Home />
-      
+    <Header />
+    <SearchBar setMovies={setMovies} />
+    <MovieList movies={movies} />
     </div>
-  );
+  )
 }
 
 export default App;
-
-// Here is your key: 4071b801
-
-// Please append it to all of your API requests,
-
-// OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=4071b801

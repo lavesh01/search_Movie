@@ -69,13 +69,12 @@ const SearchBar = ({setMovies}) => {
         
     }
     const getMovies = async () => {   
-        fetch(`http://www.omdbapi.com/?s=${input}&page=1&apikey=4071b801`)
+        fetch(`http://www.omdbapi.com/?s=${input}&page=1&apikey=${process.env.REACT_APP_API_KEY}`)
           .then(res => res.json())
           .then(data =>  setMovies(data.Search));
     }
     
     useEffect(() => {
-        
         getMovies();
     },);
     

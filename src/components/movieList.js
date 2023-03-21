@@ -55,10 +55,8 @@ const MovieDetail  = styled.div`
   justify-content: space-around;
   font-size: 0.8rem;
 `
-const Type = styled.div`
-`
-const Year = styled.div`
-`
+const Type = styled.div``
+const Year = styled.div``
 
 
 const MovieList = ({movies}) => {

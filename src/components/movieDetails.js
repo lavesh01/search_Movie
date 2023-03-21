@@ -21,8 +21,8 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
 `
-const Left = styled.div`
-  `
+const Left = styled.div``
+
 const Img = styled.img`
   display: flex;
   justify-content: space-between;
@@ -31,7 +31,8 @@ const Img = styled.img`
   width: 200px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0) 0px 22px 40px 6px;
-  `
+`
+
 const Right = styled.div`
   display: flex;
   flex-direction: column;
@@ -44,12 +45,9 @@ const Title = styled.h1`
   font-weight: 600;
   font-size: 2.5rem;
   color: royalblue;
-
 `
-const Description = styled.p`
-  
+const Description = styled.p``
 
-`
 const Rating = styled.span``
 
 const Span = styled.span`
@@ -62,17 +60,15 @@ const Span = styled.span`
     color: white;
     transition: all 0.5s ease;
   }
-  
 `
-
 const Duration = styled.span`
   padding-right: 2rem;
 `
 
-const Genre = styled.p`
-  
-`
+const Genre = styled.p``
+
 const Actors = styled.p``
+
 const Bold = styled.span`
   font-weight: 700;
 `
@@ -85,7 +81,7 @@ const MovieDetails = ({imdbID}) => {
 
         const getMovie = async () => {   
 
-            fetch(`https://www.omdbapi.com/?i=${imdbID}&page=1&apikey=4071b801`)
+            fetch(`https://www.omdbapi.com/?i=${imdbID}&page=1&apikey=${process.env.REACT_APP_API_KEY}`)
               .then(res => res.json())
               .then(data =>  {
                 setMovie(data);
@@ -93,8 +89,6 @@ const MovieDetails = ({imdbID}) => {
               });
         }
         getMovie();
-    console.log(movie);
-
     },[imdbID]);
     
   return (
@@ -145,5 +139,4 @@ const MovieDetails = ({imdbID}) => {
   )
 }
 
-export default MovieDetails
-{/* <h1 className="center">loader</h1> */}
+export default MovieDetails;
