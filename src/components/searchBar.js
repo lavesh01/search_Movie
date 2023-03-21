@@ -9,21 +9,22 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 3rem 0 0 0;
+    margin: 1.5rem 0 0 0;
+    
 `
 const Header = styled.h1`
     display: flex;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1rem;
 `
 const Input = styled.input`
     width: 100%;
-    height: 70px;
+    height: 60px;
     background-color: #fff;
     color: #cfcfcf;
     border: none;
     border-radius: 45px;
     box-shadow: 0px 0px 8px #ddd;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 300;
     margin-left: 5px;
     padding-right: 85px;
@@ -37,7 +38,7 @@ const Button = styled.button`
     height: 3rem;
     border: none;
     border-radius: 35px;
-    padding: 5px 10px;
+    padding: 4px 8px;
     margin-left: 4px;
     background-color: royalblue;
     color: white;
@@ -53,6 +54,8 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 99;
 `
 
 const SearchBar = ({setMovies}) => {

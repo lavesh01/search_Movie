@@ -1,29 +1,36 @@
 import React , {useState} from 'react'
 
+import MovieDetails from './MovieDetails'
 import styled from 'styled-components'
 
 const Container = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  right:0;
+  z-index: 9;
+  `
 const Contain = styled.div`
-    width: 33%;
-    background-color: white;
-    box-shadow: 0px 0px 8px #ddd;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    max-height: 300px;
-    overflow-y: scroll; 
-    &::-webkit-scrollbar {
-      display: none; 
-    }
+  width: 30%;
+  background-color: white;
+  box-shadow: 0px 0px 8px #ddd;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  max-height: 300px;
+  overflow-y: scroll; 
+  &::-webkit-scrollbar {
+    display: none; 
+  }
+  position: relative;
+  z-index: 9;
 `
 const Box = styled.div`
-    display: flex;
-    padding: 15px;
-    border-bottom: 1px solid black;
+  display: flex;
+  padding: 15px;
+  border-bottom: 1px solid black;
+  cursor: pointer;
 `
 const Wrapper = styled.div`
   display: flex;
@@ -37,7 +44,7 @@ const Img = styled.img`
   align-items: center;
   border-radius: 10px;
   width: 20%;
-  `
+`
 const Title = styled.title`
   display: flex;
   font-weight: 600;
@@ -56,19 +63,25 @@ const Year = styled.div`
 
 const MovieList = ({movies}) => {
   const [imdbID, setimdbID] = useState("");
-  const handleClick = (id) => {
-    setimdbID(id);
-    console.log(id);
-    console.log(imdbID);
-  }
-  return (
-    <>
+  const [state, setState] = useState(false);
 
+  const handleClick = (imdbID) => {
+    setimdbID(imdbID);
+    setState(true);
+  };
+
+  return (
+    <React.Fragment>
+    
     <Container>
       <Contain>
         {movies?.map((movie,id) => (
             
-            <Box key={id} onClick={handleClick(movie.imdbID)} >
+            <Box 
+              key={id} 
+              onClick={() => handleClick(movie?.imdbID)}
+            
+            >
               <Img src={movie?.Poster} alt="poster" />
 
             <Wrapper>
@@ -87,12 +100,11 @@ const MovieList = ({movies}) => {
       </Contain>
     </Container>
 
-    </>
+    {state && <MovieDetails imdbID={imdbID} />}
+    
+    
+    </React.Fragment>
   )
 }
 
 export default MovieList;
-
-
-
-            
