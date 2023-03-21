@@ -1,3 +1,9 @@
+
+# search_Movie
+A React web application where you can search your favourite movies and get to know more about them.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
 <<<<<<< HEAD
 # Getting Started with Create React App
 
@@ -70,6 +76,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 =======
-# search_Movie
-A React web application where you can search your favourite movies and get to know more about them.
->>>>>>> b0f092ab3779bf9ac2a8fdae1f51e2010530dcdc
