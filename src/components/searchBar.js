@@ -69,7 +69,7 @@ const SearchBar = ({setMovies}) => {
         
     }
     const getMovies = async () => {   
-        fetch(`http://www.omdbapi.com/?s=${input}&page=1&apikey=${process.env.REACT_APP_API_KEY}`)
+        fetch(`https://www.omdbapi.com/?s=${input}&page=1&apikey=${process.env.REACT_APP_API_KEY}`)
           .then(res => res.json())
           .then(data =>  setMovies(data.Search));
     }
